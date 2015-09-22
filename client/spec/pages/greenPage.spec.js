@@ -17,7 +17,7 @@ describe('The Green Page', function() {
 
     it('should produce the correct HTML', function() {
       greenPage.render();
-      expect(greenPage.$el).toContainText('Help is on the way.');
+      expect(greenPage.$el).toContainText('PANIC MESSAGE SENT.');
     });
 
     it('returns the view object', function() {
