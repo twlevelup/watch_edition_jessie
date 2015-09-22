@@ -7,8 +7,9 @@ var Router = require('./framework/router.js'),
   ConfirmPage = require('./pages/confirmPage'),
   confirmPage = new ConfirmPage(),
   greenPage = new GreenPage(),
-  homePage = new HomePage(),
-  contactsPage = new ContactsPage();
+  InboxPage = require('./pages/inboxPage'),
+  contactsPage = new ContactsPage(),
+  inboxPage = new InboxPage();
 
 var AppRouter = Router.extend({
 
@@ -17,6 +18,7 @@ var AppRouter = Router.extend({
     green: 'green',
     contacts: 'contacts',
     confirm: 'confirm'
+    inbox: 'inbox'
   },
 
   green: function() {
@@ -33,6 +35,10 @@ var AppRouter = Router.extend({
 
   contacts: function() {
     this.renderView(contactsPage);
+  },
+
+  inbox: function() {
+    this.renderView(inboxPage);
   }
 
 });
