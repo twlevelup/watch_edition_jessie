@@ -11,6 +11,7 @@ var InboxPage = Page.extend({
   highlightedMessageIndex: 0,
 
   template: require('../../templates/pages/inboxPage.hbs'),
+  templateEmptyInbox: require('../../templates/pages/inboxPageEmpty.hbs'),
 
   buttonEvents: {
     right: '',
@@ -66,6 +67,11 @@ var InboxPage = Page.extend({
 
     this.$el.html(this.template());
 
+    if (this.messages.length === 0) {
+      this.$el.html(this.templateEmptyInbox());
+      return this;
+    }
+
     var messagesHTML = document.createDocumentFragment();
 
     for (var i = 0; i < this.messages.length; i += 1) {
@@ -76,16 +82,12 @@ var InboxPage = Page.extend({
 
       var msgFragment = this.createMessageHTML(this.messages[i], i, highlighted);
 
-      // msgFragment.className = "msg"; // doesnt work
       $(messagesHTML).append(msgFragment);
     }
 
     this.$el.append(messagesHTML);
 
-    // this.$el.getElementById('msg'+this.highlightedMessage).style.backgroundColor = '#00ff00';
-
     return this;
-
   },
 
   createMessageHTML: function(msg, index, highlighted) {

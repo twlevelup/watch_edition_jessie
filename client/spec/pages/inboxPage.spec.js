@@ -75,6 +75,15 @@ describe('Inbox', function() {
       inboxPage.render();
       expect(inboxPage.createMessageHTML.calls.count()).toEqual(2);
     });
+
+    it('should say that the inbox is empty when there are no messages in the inbox', function() {
+      inboxPage.messages = [];
+      inboxPage.render();
+      var html = inboxPage.$el.html();
+      expect(html).toContainText('Inbox is empty');
+
+    });
+
     /*
     	it('should contain at least one message', function() {
           inboxPage.render();
