@@ -2,23 +2,18 @@
 
 var PageView = require('../framework/page');
 
-var homeScreen = PageView.extend({
+var greenScreen = PageView.extend({
 
-  id: 'home',
+  id: 'green',
 
-  template: require('../../templates/pages/home.hbs'),
+  template: require('../../templates/pages/green.hbs'),
 
   buttonEvents: {
-    top: 'goToContacts',
-    right: 'goToConfirmPage',
+    right: 'goToContacts',
+    top: 'scrollUp',
     bottom: 'scrollDown',
     left: 'goToHomePage'
   },
-
-  goToConfirmPage: function() {
-    global.App.navigate('confirm');
-  },
-
 
   goToContacts: function() {
     global.App.navigate('contacts');
@@ -43,4 +38,4 @@ var homeScreen = PageView.extend({
 
 });
 
-module.exports = homeScreen;
+module.exports = greenScreen;

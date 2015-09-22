@@ -8,15 +8,15 @@ module.exports = {
           message: 'What would you like to do?',
           choices: [
             {
-              name: 'Start your development environment',
+              name: 'dev',
               value: 'dev'
             },
             {
-              name: 'Prepare to commit (Run the tests and fix code style issues)',
+              name: 'pre-commit',
               value: 'pre-commit'
             },
             {
-              name: 'Run a local demo only environment',
+              name: 'staging',
               value: 'staging'
             }
           ]

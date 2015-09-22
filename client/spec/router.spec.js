@@ -3,7 +3,9 @@
 var AppRouter = require('../src/js/router.js'),
   PageView = require('../src/js/framework/page'),
   HomePage = require('../src/js/pages/homePage'),
-  ContactPage = require('../src/js/pages/contactsPage');
+  ContactPage = require('../src/js/pages/contactsPage'),
+  GreenPage = require('../src/js/pages/greenPage'),
+  ConfirmPage = require('../src/js/pages/confirmPage');
 
 describe('Application Router', function() {
 
@@ -14,6 +16,24 @@ describe('Application Router', function() {
     beforeEach(function() {
       router = new AppRouter();
       spyOn(router, 'renderView');
+    });
+
+    describe('#green', function() {
+      it('should load the green screen when the right button is pressed', function() {
+        router.green();
+        var isGreenPage = router.renderView.calls.argsFor(0)[0] instanceof GreenPage;
+        expect(isGreenPage).toBeTruthy();
+      });
+    });
+
+    describe('#confirm', function() {
+      it('should load the confirm page when the right button is pressed', function() {
+        router.confirm();
+        var isConfirmPage = router.renderView.calls.argsFor(0)[0] instanceof ConfirmPage;
+        expect(isConfirmPage).toBeTruthy();
+      });
+
+
     });
 
     describe('#home', function() {

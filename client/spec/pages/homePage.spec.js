@@ -17,20 +17,11 @@ describe('The Home Page', function() {
 
     describe('right', function() {
 
-      it('should take the user to the contacts page', function() {
+      it('should take the user to the confirm page', function() {
         spyOn(global.App, 'navigate');
         homePage.setButtonEvents();
         homePage.trigger('right');
-        expect(global.App.navigate).toHaveBeenCalledWith('contacts');
-      });
-    });
-
-    describe('top', function() {
-      it('should scroll the watch face up', function() {
-        spyOn(homePage, 'scrollUp');
-        homePage.setButtonEvents();
-        homePage.trigger('top');
-        expect(homePage.scrollUp).toHaveBeenCalled();
+        expect(global.App.navigate).toHaveBeenCalledWith('confirm');
       });
     });
 
