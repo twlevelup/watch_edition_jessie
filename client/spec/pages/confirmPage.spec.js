@@ -22,17 +22,22 @@ describe('confirm', function() {
 
     describe('left', function() {
 
-      xit('should have tests');
+      it('should take the user to the home page', function() {
+        spyOn(global.App, 'navigate');
+        confirmPage.setButtonEvents();
+        confirmPage.trigger('left');
+        expect(global.App.navigate).toHaveBeenCalledWith('');
+      });
 
     });
 
     describe('right', function() {
 
-     it('should take the user to the green page', function() {
-       spyOn(global.App, 'navigate');
-       confirmPage.setButtonEvents();
-       confirmPage.trigger('right');
-       expect(global.App.navigate).toHaveBeenCalledWith('green');
+      it('should take the user to the green page', function() {
+        spyOn(global.App, 'navigate');
+        confirmPage.setButtonEvents();
+        confirmPage.trigger('right');
+        expect(global.App.navigate).toHaveBeenCalledWith('green');
       });
 
     });

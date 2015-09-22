@@ -19,7 +19,6 @@ var homeScreen = PageView.extend({
     global.App.navigate('confirm');
   },
 
-
   goToContacts: function() {
     global.App.navigate('contacts');
   },

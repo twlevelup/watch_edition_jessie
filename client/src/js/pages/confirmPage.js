@@ -10,14 +10,14 @@ var ConfirmPage = Page.extend({
 
   buttonEvents: {
     right: 'goToGreenPage',
-    left: '',
+    left: 'goToHomePage',
     top: '',
     bottom: '',
     face: ''
   },
 
   goToGreenPage: function() {
-     global.App.navigate('green');
+    global.App.navigate('green');
   },
 
   scrollUp: function() {

@@ -9,14 +9,10 @@ var greenScreen = PageView.extend({
   template: require('../../templates/pages/green.hbs'),
 
   buttonEvents: {
-    right: 'goToContacts',
+    right: ' ',
     top: 'scrollUp',
     bottom: 'scrollDown',
     left: 'goToHomePage'
-  },
-
-  goToContacts: function() {
-    global.App.navigate('contacts');
   },
 
   scrollUp: function() {
