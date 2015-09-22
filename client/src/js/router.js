@@ -6,6 +6,7 @@ var Router = require('./framework/router.js'),
   GreenPage = require('./pages/greenPage'),
   ConfirmPage = require('./pages/confirmPage'),
   confirmPage = new ConfirmPage(),
+  homePage = new HomePage(),
   greenPage = new GreenPage(),
   InboxPage = require('./pages/inboxPage'),
   contactsPage = new ContactsPage(),
@@ -17,7 +18,7 @@ var AppRouter = Router.extend({
     '': 'home',
     green: 'green',
     contacts: 'contacts',
-    confirm: 'confirm'
+    confirm: 'confirm',
     inbox: 'inbox'
   },
 
