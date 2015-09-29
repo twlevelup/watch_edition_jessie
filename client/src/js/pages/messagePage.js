@@ -2,7 +2,6 @@
 
 var Page = require('../framework/page');
 
-
 var MessagePage = Page.extend({
 
   template: require('../../templates/pages/messagePage.hbs'),
@@ -15,10 +14,10 @@ var MessagePage = Page.extend({
     face: ''
   },
 
-  initialize: function(){
+  initialize: function() {
   },
 
-  goToInbox: function () {
+  goToInbox: function() {
     global.App.navigate('inbox');
   },
 
