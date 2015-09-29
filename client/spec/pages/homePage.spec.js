@@ -20,8 +20,17 @@ describe('The Home Page', function() {
       it('should take the user to the confirm page', function() {
         spyOn(global.App, 'navigate');
         homePage.setButtonEvents();
+		homePage.selectedPage = 0;
         homePage.trigger('right');
         expect(global.App.navigate).toHaveBeenCalledWith('confirm');
+      });
+	  
+	   it('should take the user to the inbox page', function() {
+        spyOn(global.App, 'navigate');
+        homePage.setButtonEvents();
+		homePage.selectedPage = 1;
+        homePage.trigger('right');
+        expect(global.App.navigate).toHaveBeenCalledWith('inbox');
       });
     });
 
