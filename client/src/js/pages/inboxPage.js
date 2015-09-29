@@ -14,7 +14,7 @@ var InboxPage = Page.extend({
   templateEmptyInbox: require('../../templates/pages/inboxPageEmpty.hbs'),
 
   buttonEvents: {
-    right: '',
+    right: 'showMessage',
     left: 'goToHomePage',
     top: 'scrollUp',
     bottom: 'scrollDown',
@@ -24,6 +24,11 @@ var InboxPage = Page.extend({
   initialize: function() {
     this.messages = [];
     this.initializeMessages();
+  },
+
+  showMessage: function() {
+    global.App.myMessage = this.messages[this.highlightedMessageIndex];
+    global.App.navigate('message');
   },
 
   scrollUp: function() {

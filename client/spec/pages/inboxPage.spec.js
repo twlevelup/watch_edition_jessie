@@ -30,7 +30,11 @@ describe('Inbox', function() {
 
     describe('right', function() {
 
-      xit('should have tests');
+      it('should take the user to the message page', function() {
+        spyOn(global.App, 'navigate');
+        inboxPage.trigger('right');
+        expect(global.App.navigate).toHaveBeenCalledWith('message');
+      });
 
     });
 
