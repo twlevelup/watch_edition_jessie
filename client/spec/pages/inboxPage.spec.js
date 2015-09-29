@@ -88,15 +88,16 @@ describe('Inbox', function() {
 
     });
 
-    /*
-    	it('should contain at least one message', function() {
+
+    	it('should contain one message div per message', function() {
           inboxPage.render();
-          var messages = document.getElementsByClassName('msg');
-    	  expect(messages.length > 0).toBe(true);
+          var messages = inboxPage.$el.find('.msg');
+    	     expect(messages.length === inboxPage.messages.length).toBe(true);
     	});
-        it('every displayed message should have one subject field', function() {
+
+     it('every displayed message should have one subject field', function() {
           inboxPage.render();
-          var messages = document.getElementsByClassName('msg');
+          var messages = inboxPage.$el.find('.msg');
           for (var i = 0; i < messages.length; i += 1) {
             var subjects = messages[i].getElementsByClassName('subject');
             expect(subjects.length === 1).toBe(true);
@@ -104,7 +105,7 @@ describe('Inbox', function() {
         });
     	it('should display unread messages bold', function() {
           inboxPage.render();
-          var messages = document.getElementsByClassName('msg');
+          var messages = inboxPage.$el.find('.msg');
           for (var i = 0; i < messages.length; i += 1) {
     		if (messages.read === false) {
     			var subjects = messages[i].getElementsByClassName('subject');
@@ -114,7 +115,7 @@ describe('Inbox', function() {
         });
     	it('should display read messages not bold', function() {
           inboxPage.render();
-          var messages = document.getElementsByClassName('msg');
+          var messages = inboxPage.$el.find('.msg');
           for (var i = 0; i < messages.length; i += 1) {
     		if (messages.read === false) {
     			var subjects = messages[i].getElementsByClassName('subject');
@@ -122,7 +123,7 @@ describe('Inbox', function() {
     		}
           }
         });
-*/
+
   });
 
 });

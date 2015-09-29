@@ -32,8 +32,6 @@ describe('Application Router', function() {
         var isConfirmPage = router.renderView.calls.argsFor(0)[0] instanceof ConfirmPage;
         expect(isConfirmPage).toBeTruthy();
       });
-
-
     });
 
     describe('#home', function() {
