@@ -5,18 +5,20 @@ var PageView = require('../framework/page');
 var homeScreen = PageView.extend({
 
   id: 'home',
+  selectedPage: 0,
+  selectablePages: ['confirm', 'inbox'],
 
   template: require('../../templates/pages/home.hbs'),
 
   buttonEvents: {
-    top: 'goToContacts',
-    right: 'goToConfirmPage',
+    top: 'scrollUp',
+    right: 'goToSelectedPage',
     bottom: 'scrollDown',
     left: 'goToHomePage'
   },
 
-  goToConfirmPage: function() {
-    global.App.navigate('confirm');
+  goToSelectedPage: function() {
+    global.App.navigate(this.selectablePages[this.selectedPage]);
   },
 
   goToContacts: function() {
@@ -24,11 +26,15 @@ var homeScreen = PageView.extend({
   },
 
   scrollUp: function() {
-    $('#watch-face').animate({scrollTop: '-=70px'});
+    this.selectedPage = 0;
+    $('#top').addClass('highlight');
+    $('#bottom').removeClass('highlight');
   },
 
   scrollDown: function() {
-    $('#watch-face').animate({scrollTop: '+=70px'});
+    this.selectedPage = 1;
+    $('#top').removeClass('highlight');
+    $('#bottom').addClass('highlight');
   },
 
   goToHomePage: function() {

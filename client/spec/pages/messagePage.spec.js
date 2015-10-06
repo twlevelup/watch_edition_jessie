@@ -10,24 +10,23 @@ describe('messagePage', function() {
 
   var messagePage;
 
-  beforeEach(function () {
+  beforeEach(function() {
     messagePage = new MessagePage();
   });
 
-  describe('button event handlers', function () {
+  describe('button event handlers', function() {
 
-    beforeEach(function () {
+    beforeEach(function() {
       messagePage.setButtonEvents();
     });
 
-    describe('goToInbox', function () {
+    describe('goToInbox', function() {
 
-      it('should go back to the inbox page', function(){
+      it('should go back to the inbox page', function() {
         spyOn(global.App, 'navigate');
         messagePage.trigger('left');
         expect(global.App.navigate).toHaveBeenCalledWith('inbox');
       });
-
 
     });
 
@@ -39,19 +38,19 @@ describe('messagePage', function() {
      });
     });
 
-    describe('top', function () {
+    describe('top', function() {
 
       xit('should have tests');
 
     });
 
-    describe('bottom', function () {
+    describe('bottom', function() {
 
       xit('should have tests');
 
     });
 
-    describe('face', function () {
+    describe('face', function() {
 
       xit('should have tests');
 
@@ -59,9 +58,9 @@ describe('messagePage', function() {
 
   });
 
-  describe('rendering', function () {
+  describe('rendering', function() {
 
-    it('should produce the correct HTML', function () {
+    it('should produce the correct HTML', function() {
       messagePage.render();
       var html = messagePage.$el.html();
       expect(html).toContainText('Subject');
