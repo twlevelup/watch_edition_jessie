@@ -21,16 +21,16 @@
 }
 
 .highlight {
-	background-color: orange;
+	background-color: #f27935;
 }
 
 #panic-button {
     height: 80%;
     padding-left: 40%;
-    background-size: 60%;
+    background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../images/panic_sign.svg");
+    background-image: url("../images/Home screen panic button.png");
 	padding-top: 10%;
 }
 #message-button {
@@ -39,6 +39,6 @@
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../images/message.png");
+    background-image: url("../images/Inboxicon_large.png");
 	padding-top: 10%;
 }

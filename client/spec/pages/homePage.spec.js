@@ -47,11 +47,6 @@ describe('The Home Page', function() {
 
   describe('rendering', function() {
 
-    it('should contain HTML for panic button image', function() {
-      homePage.render();
-      expect(homePage.$el).toContainText('PANIC');
-    });
-
     it('returns the view object', function() {
       expect(homePage.render()).toEqual(homePage);
     });
