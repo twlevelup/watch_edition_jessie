@@ -66,18 +66,11 @@ describe('Inbox', function() {
       expect(html).toContainText('Inbox');
     });
 
-    it('should display all messages', function() {
+    it('should display only four messages and not more', function() {
       spyOn(inboxPage, 'createMessageHTML');
-      inboxPage.messages = [{}, {}, {}, {}];
+      inboxPage.messages = [{}, {}, {}, {}, {}, {}];
       inboxPage.render();
       expect(inboxPage.createMessageHTML.calls.count()).toEqual(4);
-    });
-
-    it('should display all messages', function() {
-      spyOn(inboxPage, 'createMessageHTML');
-      inboxPage.messages = [{}, {}];
-      inboxPage.render();
-      expect(inboxPage.createMessageHTML.calls.count()).toEqual(2);
     });
 
     it('should say that the inbox is empty when there are no messages in the inbox', function() {
@@ -86,12 +79,6 @@ describe('Inbox', function() {
       var html = inboxPage.$el.html();
       expect(html).toContainText('Inbox is empty');
 
-    });
-
-    it('should contain one message div per message', function() {
-      inboxPage.render();
-      var messages = inboxPage.$el.find('.msg');
-      expect(messages.length === inboxPage.messages.length).toBe(true);
     });
 
     it('every displayed message should have one subject field', function() {

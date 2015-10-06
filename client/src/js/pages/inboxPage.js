@@ -37,7 +37,7 @@ var InboxPage = Page.extend({
       this.highlightedMessageIndex = 0;
     }
 
-    $('#watch-face').animate({scrollTop: '-=90px'});
+    // $('#watch-face').animate({scrollTop: '-=90px'});
     this.render();
   },
 
@@ -47,7 +47,7 @@ var InboxPage = Page.extend({
       this.highlightedMessageIndex = this.messages.length - 1;
     }
 
-    $('#watch-face').animate({scrollTop: '+=90px'});
+    // $('#watch-face').animate({scrollTop: '+=90px'});
     this.render();
   },
 
@@ -79,7 +79,18 @@ var InboxPage = Page.extend({
 
     var messagesHTML = document.createDocumentFragment();
 
-    for (var i = 0; i < this.messages.length; i += 1) {
+    var indexStart = this.highlightedMessageIndex - 1;
+    if (indexStart < 0) {
+      indexStart = 0;
+    }
+
+    var indexEnd = indexStart + 3;
+    if (indexEnd >= this.messages.length) {
+      indexEnd = this.messages.length - 1;
+      indexStart = this.messages.length - 4;
+    }
+
+    for (var i = indexStart; i <= indexEnd; i += 1) {
       var highlighted = false;
       if (i === this.highlightedMessageIndex) {
         highlighted = true;

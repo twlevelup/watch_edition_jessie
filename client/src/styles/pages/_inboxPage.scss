@@ -1,13 +1,33 @@
 #inbox-page {
-
+	margin-right: 30px;
 }
+#inboxtitle {
+	margin-right: 60px;
+	background-color: #f27935;
+	padding-left: 35px;
+	background-image: url("../images/Inboxicon_large.png");
+	background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: left;
+	height: 24px;
+	width: 170px;
+	border-left: 5px solid #f27935;
+}
+
 #inbox-page .msg {
-	color: #dddddd;
+	height: 56px;
 }
 
 #inbox-page .highlighted {
-	background-color: #00ff00;
+	background-color: #b4b3b5;
 }
 ::-webkit-scrollbar { 
     display: none; 
+}
+
+.subject {
+	
+}
+.date {
+	
 }
