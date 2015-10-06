@@ -5,7 +5,8 @@ var AppRouter = require('../src/js/router.js'),
   HomePage = require('../src/js/pages/homePage'),
   ContactPage = require('../src/js/pages/contactsPage'),
   GreenPage = require('../src/js/pages/greenPage'),
-  ConfirmPage = require('../src/js/pages/confirmPage');
+  ConfirmPage = require('../src/js/pages/confirmPage'),
+  MessageActionPage = require('../src/js/pages/messageActionPage');
 
 describe('Application Router', function() {
 
@@ -47,6 +48,14 @@ describe('Application Router', function() {
         router.contacts();
         var isContactPage = router.renderView.calls.argsFor(0)[0] instanceof ContactPage;
         expect(isContactPage).toBeTruthy();
+      });
+    });
+
+    describe('#messageAction', function() {
+      it('should load the messageAction screen', function() {
+        router.messageAction();
+        var isMessageActionPage = router.renderView.calls.argsFor(0)[0] instanceof MessageActionPage;
+        expect(isMessageActionPage).toBeTruthy();
       });
     });
 

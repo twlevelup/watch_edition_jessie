@@ -32,9 +32,11 @@ describe('messagePage', function() {
     });
 
     describe('right', function () {
-
-      xit('should have tests');
-
+     it('should go to the messageAction page', function(){
+       spyOn(global.App, 'navigate');
+       messagePage.trigger('right');
+       expect(global.App.navigate).toHaveBeenCalledWith('messageAction');
+     });
     });
 
     describe('top', function () {

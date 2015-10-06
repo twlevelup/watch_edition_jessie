@@ -5,19 +5,21 @@ var Router = require('./framework/router.js'),
   ContactsPage = require('./pages/contactsPage'),
   GreenPage = require('./pages/greenPage'),
   ConfirmPage = require('./pages/confirmPage'),
-
   MessagePage = require('./pages/messagePage'),
   InboxPage = require('./pages/inboxPage'),
-
+  RsvpPage = require('./pages/rsvpPage'),
+  RsvpSelectPage = require('./pages/rsvpSelectPage'),
+  MessageActionPage = require('./pages/messageActionPage'),
   homePage = new HomePage(),
   greenPage = new GreenPage(),
   confirmPage = new ConfirmPage(),
-
   contactsPage = new ContactsPage(),
   inboxPage = new InboxPage(),
+  messagePage = new MessagePage(),
+  rsvpPage = new RsvpPage(),
+  rsvpSelectPage = new RsvpSelectPage(),
+  messageActionPage = new MessageActionPage();
 
-
-  messagePage = new MessagePage();
 
 var AppRouter = Router.extend({
 
@@ -27,7 +29,10 @@ var AppRouter = Router.extend({
     contacts: 'contacts',
     confirm: 'confirm',
     inbox: 'inbox',
-    message: 'message'
+    message: 'message',
+    rsvp: 'rsvp',
+    rsvpSelect: 'rsvpSelect',
+    messageAction: 'messageActionPage'
   },
 
   green: function() {
@@ -52,8 +57,19 @@ var AppRouter = Router.extend({
 
   message: function() {
     this.renderView(messagePage);
-  }
+  },
 
+  rsvp: function() {
+    this.renderView(rsvpPage);
+  },
+
+  rsvpSelect: function() {
+    this.renderView(rsvpSelectPage);
+  },
+
+  messageAction: function() {
+    this.renderView(messageActionPage);
+  }
 });
 
 module.exports = AppRouter;

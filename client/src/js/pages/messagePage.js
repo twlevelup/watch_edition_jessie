@@ -8,7 +8,7 @@ var MessagePage = Page.extend({
   template: require('../../templates/pages/messagePage.hbs'),
 
   buttonEvents: {
-    right: '',
+    right: 'goToMessageAction',
     left: 'goToInbox',
     top: '',
     bottom: '',
@@ -20,6 +20,10 @@ var MessagePage = Page.extend({
 
   goToInbox: function () {
     global.App.navigate('inbox');
+  },
+
+  goToMessageAction: function () {
+    global.App.navigate('messageAction');
   },
 
   render: function() {
