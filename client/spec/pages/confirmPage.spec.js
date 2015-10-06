@@ -67,7 +67,7 @@ describe('confirm', function() {
     it('should produce the correct HTML', function() {
       confirmPage.render();
       var html = confirmPage.$el.html();
-      expect(html).toContainText('confirm');
+      expect(html).toContainText('Confirm?');
     });
 
     it('returns the view object', function() {

@@ -19,6 +19,7 @@ var homeScreen = PageView.extend({
 
   goToSelectedPage: function() {
     global.App.navigate(this.selectablePages[this.selectedPage]);
+    this.selectedPage = 0;
   },
 
   goToContacts: function() {
