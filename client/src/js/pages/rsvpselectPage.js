@@ -41,7 +41,7 @@ var RsvpSelectPage = Page.extend({
     this.selectedPage = 1;
     $('#top').removeClass('highlight2');
     $('#bottom').addClass('highlight2');
-  },
+  }
 
 });
 

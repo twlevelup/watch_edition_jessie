@@ -10,41 +10,41 @@ describe('rsvp', function() {
 
   var rsvpPage;
 
-  beforeEach(function () {
+  beforeEach(function() {
     rsvpPage = new RsvpPage();
   });
 
-  describe('button event handlers', function () {
+  describe('button event handlers', function() {
 
-    beforeEach(function () {
+    beforeEach(function() {
       rsvpPage.setButtonEvents();
     });
 
-    describe('left', function () {
+    describe('left', function() {
 
       xit('should have tests');
 
     });
 
-    describe('right', function () {
+    describe('right', function() {
 
       xit('should have tests');
 
     });
 
-    describe('top', function () {
+    describe('top', function() {
 
       xit('should have tests');
 
     });
 
-    describe('bottom', function () {
+    describe('bottom', function() {
 
       xit('should have tests');
 
     });
 
-    describe('face', function () {
+    describe('face', function() {
 
       xit('should have tests');
 
@@ -52,9 +52,9 @@ describe('rsvp', function() {
 
   });
 
-  describe('rendering', function () {
+  describe('rendering', function() {
 
-    it('should produce the correct HTML', function () {
+    it('should produce the correct HTML', function() {
       rsvpPage.render();
       var html = rsvpPage.$el.html();
       expect(html).toContainText('rsvp');

@@ -10,13 +10,13 @@ describe('messageAction', function() {
 
   var messageActionPage;
 
-  beforeEach(function () {
+  beforeEach(function() {
     messageActionPage = new MessageActionPage();
   });
 
-  describe('button event handlers', function () {
+  describe('button event handlers', function() {
 
-    beforeEach(function () {
+    beforeEach(function() {
       messageActionPage.setButtonEvents();
     });
 
@@ -28,7 +28,7 @@ describe('messageAction', function() {
       });
     });
 
-    describe('right', function () {
+    describe('right', function() {
       it('should take the user to the rsvpSelect page', function() {
         spyOn(global.App, 'navigate');
         messageActionPage.trigger('right');
@@ -36,19 +36,19 @@ describe('messageAction', function() {
       });
     });
 
-    describe('top', function () {
+    describe('top', function() {
 
       xit('should have tests');
 
     });
 
-    describe('bottom', function () {
+    describe('bottom', function() {
 
       xit('should have tests');
 
     });
 
-    describe('face', function () {
+    describe('face', function() {
 
       xit('should have tests');
 
@@ -56,21 +56,21 @@ describe('messageAction', function() {
 
   });
 
-  describe('rendering', function () {
+  describe('rendering', function() {
 
-    it('should produce the correct HTML', function () {
+    it('should produce the correct HTML', function() {
       messageActionPage.render();
       var html = messageActionPage.$el.html();
       expect(html).toContainText('What do you want to do?');
     });
 
-    it('should provide a way to rsvp', function () {
+    it('should provide a way to rsvp', function() {
       messageActionPage.render();
       var html = messageActionPage.$el.html();
       expect(html).toContainText('RSVP');
     });
 
-    it('should provide a way to discard message', function () {
+    it('should provide a way to discard message', function() {
       messageActionPage.render();
       var html = messageActionPage.$el.html();
       expect(html).toContainText('DISCARD');

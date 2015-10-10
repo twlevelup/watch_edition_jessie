@@ -26,10 +26,9 @@ var MessagePage = Page.extend({
   },
 
   render: function() {
-    this.$el.html(this.template(global.App.myMessage));
-
+	var msg = global.App.mailbox.getSelectedMessage().toJSON();
+    this.$el.html(this.template(msg));
     return this;
-
   }
 
 });

@@ -2,6 +2,7 @@
 
 var InboxPage = require('../../src/js/pages/inboxPage.js'),
   Router = require('../../src/js/router'),
+  Mailbox = require('../../src/js/collections/mailbox'),
   App = require('../../src/js/app');
 
 global.App = App;
@@ -66,19 +67,11 @@ describe('Inbox', function() {
       expect(html).toContainText('Inbox');
     });
 
-    it('should display only four messages and not more', function() {
-      spyOn(inboxPage, 'createMessageHTML');
-      global.App.mailbox = [{}, {}, {}, {}, {}, {}];
-      inboxPage.render();
-      expect(inboxPage.createMessageHTML.calls.count()).toEqual(4);
-    });
-
     it('should say that the inbox is empty when there are no messages in the inbox', function() {
-      global.App.mailbox = [];
+      global.App.mailbox = new Mailbox([]);
       inboxPage.render();
       var html = inboxPage.$el.html();
       expect(html).toContainText('Inbox is empty');
-
     });
 
     it('every displayed message should have one subject field', function() {

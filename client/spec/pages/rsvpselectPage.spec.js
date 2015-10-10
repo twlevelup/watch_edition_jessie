@@ -10,41 +10,41 @@ describe('rsvpSelect', function() {
 
   var rsvpSelectPage;
 
-  beforeEach(function () {
+  beforeEach(function() {
     rsvpSelectPage = new RsvpSelectPage();
   });
 
-  describe('button event handlers', function () {
+  describe('button event handlers', function() {
 
-    beforeEach(function () {
+    beforeEach(function() {
       rsvpSelectPage.setButtonEvents();
     });
 
-    describe('left', function () {
+    describe('left', function() {
 
       xit('should have tests');
 
     });
 
-    describe('right', function () {
+    describe('right', function() {
 
       xit('should have tests');
 
     });
 
-    describe('top', function () {
+    describe('top', function() {
 
       xit('should have tests');
 
     });
 
-    describe('bottom', function () {
+    describe('bottom', function() {
 
       xit('should have tests');
 
     });
 
-    describe('face', function () {
+    describe('face', function() {
 
       xit('should have tests');
 
@@ -52,9 +52,9 @@ describe('rsvpSelect', function() {
 
   });
 
-  describe('rendering', function () {
+  describe('rendering', function() {
 
-    it('should produce the correct HTML', function () {
+    it('should produce the correct HTML', function() {
       rsvpSelectPage.render();
       var html = rsvpSelectPage.$el.html();
       expect(html).toContainText('Do you want to attend?');
