@@ -45,7 +45,11 @@ var Mailbox = Backbone.Collection.extend({
   },
 
   setRSVP: function(rsvp) {
-    this.getSelectedMessage().set('rsvp', rsvp);
+	var txt = 'Attending!';
+	if (!rsvp) {
+		txt = 'Not attending :(';
+	}
+    this.getSelectedMessage().set('rsvp', txt);
   },
 
   deleteCurrentMessage: function() {
