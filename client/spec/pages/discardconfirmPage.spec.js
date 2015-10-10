@@ -22,7 +22,7 @@ describe('DiscardConfirm', function() {
 
     describe('left', function () {
 
-      xit('should return to the RSVPPage',function(){
+      xit('should return to the messageActionPage',function(){
         spyOn(global.App, 'navigate');
         discardconfirmPage.trigger('right');
         expect(global.App.navigate).toHaveBeenCalledWith('');
@@ -39,6 +39,15 @@ describe('DiscardConfirm', function() {
         discardconfirmPage.trigger('right');
         expect(global.App.navigate).toHaveBeenCalledWith('inbox');
       });
+
+      it('should discard the chosen message',function(){
+        spyOn(global.App, 'navigate');
+        discardconfirmPage.setButtonEvents();
+        discardconfirmPage.selectedPage = 0;
+        discardconfirmPage.trigger('right');
+        expect(global.App.navigate).toHaveBeenCalledWith('inbox');
+      });
+
 
       it('should return to the messagePage',function(){
         spyOn(global.App, 'navigate');

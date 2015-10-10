@@ -36,14 +36,14 @@ var DiscardconfirmPage = Page.extend({
 
   scrollUp: function() {
     this.selectedPage = 0;
-    $('#top').addClass('highlight');
-    $('#bottom').removeClass('highlight');
+    $('#top').addClass('highlight2');
+    $('#bottom').removeClass('highlight2');
   },
 
   scrollDown: function() {
     this.selectedPage = 1;
-    $('#top').removeClass('highlight');
-    $('#bottom').addClass('highlight');
+    $('#top').removeClass('highlight2');
+    $('#bottom').addClass('highlight2');
   },
 
   goToRSVPPage: function() {
@@ -55,7 +55,7 @@ var DiscardconfirmPage = Page.extend({
   render: function() {
     this.$el.html(this.template());
     return this;
-  }//test
+  }
 
 });
 
