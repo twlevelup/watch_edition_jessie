@@ -28,12 +28,12 @@
 }
 
 #top {
-	width: 100%;
+	width: 100% !important;
 	height: 40%;
 }
 
 #bottom {
-	width: 100%;
+	width: 100% !important;
 	height: 40%;
 }
 
@@ -47,6 +47,7 @@
     text-align: center;
     font-size: 1.5em;
     padding-top: 15%;
+	padding-left: 0% !important;
 }
 
 #no-button {
@@ -55,4 +56,5 @@
     text-align: center;
     font-size: 1.5em;
     padding-top: 15%;
+	padding-left: 0% !important;
 }
