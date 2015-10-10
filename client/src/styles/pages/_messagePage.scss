@@ -1,0 +1,31 @@
+.message-subject {
+  margin: 7px 60px 7px 5px;
+  padding-left: 35px;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: left;
+  height: 24px;
+  width: 170px;
+  font-size:14px;
+  line-height: 14px;
+}
+
+.info {
+  background-image: url("../images/info_message.png");
+}
+
+.event {
+  background-image: url("../images/event_message.png");
+}
+
+.subject-line {
+  font-weight: bold;
+}
+
+.date-line {
+  font-style: italic;
+}
+
+.message-content {
+  margin: 10px 45px 10px 10px;
+}
