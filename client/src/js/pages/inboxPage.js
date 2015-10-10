@@ -33,6 +33,7 @@ var InboxPage = Page.extend({
     if (global.App.myMessageIndex <= 0) {
       global.App.myMessageIndex = 0;
     }
+
     this.render();
   },
 
@@ -41,15 +42,16 @@ var InboxPage = Page.extend({
     if (global.App.myMessageIndex >= this.messages.length) {
       global.App.myMessageIndex = this.messages.length - 1;
     }
+
     this.render();
   },
-  
+
   goToHomePage: function() {
     global.App.navigate('');
   },
 
   render: function() {
-	this.messages = global.App.mailbox;
+    this.messages = global.App.mailbox;
 
     this.$el.html(this.template());
 
@@ -60,19 +62,21 @@ var InboxPage = Page.extend({
 
     var messagesHTML = document.createDocumentFragment();
 
-	// Select 4 messages around the current highlighted message
+    // Select 4 messages around the current highlighted message
     var indexStart = global.App.myMessageIndex - 1;
     if (indexStart < 0) {
       indexStart = 0;
     }
+
     var indexEnd = indexStart + 3;
     if (indexEnd >= this.messages.length) {
       indexEnd = this.messages.length - 1;
       indexStart = this.messages.length - 4;
     }
-	if (indexStart < 0) {
-		indexStart = 0;
-	}
+
+    if (indexStart < 0) {
+      indexStart = 0;
+    }
 
     for (var i = indexStart; i <= indexEnd; i += 1) {
       var highlighted = false;

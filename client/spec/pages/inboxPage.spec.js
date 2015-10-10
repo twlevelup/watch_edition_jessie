@@ -74,7 +74,7 @@ describe('Inbox', function() {
     });
 
     it('should say that the inbox is empty when there are no messages in the inbox', function() {
-		global.App.mailbox = [];
+      global.App.mailbox = [];
       inboxPage.render();
       var html = inboxPage.$el.html();
       expect(html).toContainText('Inbox is empty');
