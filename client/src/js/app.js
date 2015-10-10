@@ -4,6 +4,7 @@ var Router = require('./router'),
   WatchFace = require('./framework/watchFace'),
   NotificationsPanel = require('./framework/notifications'),
   availableNotificationTypes = require('./notifications/notificationsConfig'),
+  Mailbox = require('./collections/mailbox'),
   clock = require('./framework/clock');
 
 var App = {
@@ -14,7 +15,7 @@ var App = {
     App.router.navigate(route, true);
   },
 
-  messages: [
+  mailbox: new Mailbox([
    {subject: 'Free Food!', message: 'Come to the USYD quad for free food', date: '15/09/15', rsvp: 'unknown', read: false, type: 'info'},
     {subject: 'Event Mes 1', message: 'Mock Message Mock Message Mock Message Mock Message ', date: '14/09/15', rsvp: 'unknown', read: false, type: 'event'},
     {subject: 'Info Mes 1', message: 'Mock Message Mock Message Mock Message Mock Message', date: '14/09/15', rsvp: 'unknown', read: false, type: 'info'},
@@ -25,16 +26,9 @@ var App = {
     {subject: 'Info Mes 4', message: 'Mock Message Mock Message Mock Message Mock Message', date: '09/09/15', rsvp: 'unknown', read: true, type: 'info'},
     {subject: 'Info Mes 5', message: 'Mock Message Mock Message Mock Message Mock Message', date: '08/09/15', rsvp: 'unknown', read: true, type: 'info'},
     {subject: 'Info Mes 6', message: 'Mock Message Mock Message Mock Message Mock Message', date: '07/09/15', rsvp: 'unknown', read: true, type: 'info'},
-  ],
+  ]),
   
   start: function() {
-
-	// var Mailbox = Backbone.collection.extend({});
-	// this.mailbox = new Mailbox();
-	// this.mailbox.push(this.messages);
-	
-	this.myMessageIndex = 0;
-	this.mailbox = this.messages;
   
     this.router = new Router();
 
