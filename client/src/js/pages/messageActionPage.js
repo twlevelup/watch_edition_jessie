@@ -2,17 +2,19 @@
 
 var Page = require('../framework/page');
 
-var MessageactionPage = Page.extend({
+var MessageActionPage = Page.extend({
 
   id: 'messageaction-page',
+  selectedPage: 0,
+  selectablePages: ['rsvpSelect', 'discard'],
 
-  template: require('../../templates/pages/messageactionPage.hbs'),
+  template: require('../../templates/pages/messageActionPage.hbs'),
 
   buttonEvents: {
-    right: 'goToRsvpSelect',
+    right: 'goToSelectedPage',
     left: 'goToMessage',
-    top: '',
-    bottom: '',
+    top: 'scrollUp',
+    bottom: 'scrollDown',
     face: ''
   },
 
@@ -24,14 +26,31 @@ var MessageactionPage = Page.extend({
 
   },
 
+  goToSelectedPage: function() {
+    global.App.navigate(this.selectablePages[this.selectedPage]);
+    this.selectedPage = 0;
+  },
+
+  scrollUp: function() {
+    this.selectedPage = 0;
+    $('#top').addClass('highlight2');
+    $('#bottom').removeClass('highlight2');
+  },
+
+  scrollDown: function() {
+    this.selectedPage = 1;
+    $('#top').removeClass('highlight2');
+    $('#bottom').addClass('highlight2');
+  },
+
   goToMessage: function() {
     global.App.navigate('message');
   },
 
-  goToRsvpSelect: function() {
+  /*goToRsvpSelect: function() {
     global.App.navigate('rsvpSelect');
-  },
+  },*/
 
 });
 
-module.exports = MessageactionPage;
+module.exports = MessageActionPage;

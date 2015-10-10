@@ -6,7 +6,8 @@ var AppRouter = require('../src/js/router.js'),
   ContactPage = require('../src/js/pages/contactsPage'),
   GreenPage = require('../src/js/pages/greenPage'),
   ConfirmPage = require('../src/js/pages/confirmPage'),
-  MessageActionPage = require('../src/js/pages/messageActionPage');
+  MessageActionPage = require('../src/js/pages/messageActionPage'),
+  RsvpSelectPage = require('../src/js/pages/rsvpSelectPage');
 
 describe('Application Router', function() {
 
@@ -56,6 +57,14 @@ describe('Application Router', function() {
         router.messageAction();
         var isMessageActionPage = router.renderView.calls.argsFor(0)[0] instanceof MessageActionPage;
         expect(isMessageActionPage).toBeTruthy();
+      });
+    });
+
+    describe('#rsvpSelect', function() {
+      it('should load the rsvpSelect screen', function() {
+        router.rsvpSelect();
+        var isRsvpSelectPage = router.renderView.calls.argsFor(0)[0] instanceof RsvpSelectPage;
+        expect(isRsvpSelectPage).toBeTruthy();
       });
     });
 

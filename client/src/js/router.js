@@ -32,7 +32,7 @@ var AppRouter = Router.extend({
     message: 'message',
     rsvp: 'rsvp',
     rsvpSelect: 'rsvpSelect',
-    messageAction: 'messageActionPage'
+    messageAction: 'messageAction'
   },
 
   green: function() {

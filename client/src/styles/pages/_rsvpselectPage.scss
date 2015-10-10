@@ -1,3 +1,54 @@
-#rsvpselect-page {
+#messageaction-page {
+ height: 100%;
+ width: 90%;
+}
 
+#home {
+  font-style: italic;
+  height: 100%;
+
+}
+
+#rsvp-container {
+	height: 95%;
+	width: 100%;
+}
+
+#text-container {
+ height: 15%;
+ width: 92%;
+ font-size: 1.1em;
+ padding-top: 5%;
+ padding-left: 8%;
+ background-color: #f27935;
+}
+
+#top {
+	width: 100%;
+	height: 40%;
+}
+
+#bottom {
+	width: 100%;
+	height: 40%;
+}
+
+.highlight2 {
+	background-color: #b4b3b5;
+}
+
+#yes-button {
+    height: 25%;
+    background-size: 30%;
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 15%;
+}
+
+#no-button {
+    height: 25%;
+    background-size: 30%;
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 15%;
 }

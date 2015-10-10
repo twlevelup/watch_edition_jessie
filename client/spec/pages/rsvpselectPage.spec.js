@@ -1,6 +1,6 @@
 'use strict';
 
-var RsvpselectPage = require('../../src/js/pages/rsvpselectPage.js'),
+var RsvpSelectPage = require('../../src/js/pages/rsvpSelectPage.js'),
   Router = require('../../src/js/router'),
   App = require('../../src/js/app');
 
@@ -8,16 +8,16 @@ global.App = App;
 
 describe('rsvpSelect', function() {
 
-  var rsvpselectPage;
+  var rsvpSelectPage;
 
   beforeEach(function () {
-    rsvpselectPage = new RsvpselectPage();
+    rsvpSelectPage = new RsvpSelectPage();
   });
 
   describe('button event handlers', function () {
 
     beforeEach(function () {
-      rsvpselectPage.setButtonEvents();
+      rsvpSelectPage.setButtonEvents();
     });
 
     describe('left', function () {
@@ -55,13 +55,13 @@ describe('rsvpSelect', function() {
   describe('rendering', function () {
 
     it('should produce the correct HTML', function () {
-      rsvpselectPage.render();
-      var html = rsvpselectPage.$el.html();
-      expect(html).toContainText('rsvpSelect');
+      rsvpSelectPage.render();
+      var html = rsvpSelectPage.$el.html();
+      expect(html).toContainText('Do you want to attend?');
     });
 
     it('returns the view object', function() {
-      expect(rsvpselectPage.render()).toEqual(rsvpselectPage);
+      expect(rsvpSelectPage.render()).toEqual(rsvpSelectPage);
     });
 
   });

@@ -61,7 +61,19 @@ describe('messageAction', function() {
     it('should produce the correct HTML', function () {
       messageActionPage.render();
       var html = messageActionPage.$el.html();
-      expect(html).toContainText('messageAction');
+      expect(html).toContainText('What do you want to do?');
+    });
+
+    it('should provide a way to rsvp', function () {
+      messageActionPage.render();
+      var html = messageActionPage.$el.html();
+      expect(html).toContainText('RSVP');
+    });
+
+    it('should provide a way to discard message', function () {
+      messageActionPage.render();
+      var html = messageActionPage.$el.html();
+      expect(html).toContainText('DISCARD');
     });
 
     it('returns the view object', function() {
