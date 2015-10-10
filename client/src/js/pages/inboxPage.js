@@ -23,6 +23,7 @@ var InboxPage = Page.extend({
   },
 
   showMessage: function() {
+    global.App.mailbox.setToRead();
     global.App.navigate('message');
   },
 

@@ -21,12 +21,12 @@ var MessagePage = Page.extend({
     global.App.navigate('inbox');
   },
 
-  goToMessageAction: function () {
+  goToMessageAction: function() {
     global.App.navigate('messageAction');
   },
 
   render: function() {
-	var msg = global.App.mailbox.getSelectedMessage().toJSON();
+    var msg = global.App.mailbox.getSelectedMessage().toJSON();
     this.$el.html(this.template(msg));
     return this;
   }
