@@ -34,3 +34,4 @@ var MessagePage = Page.extend({
 });
 
 module.exports = MessagePage;
+

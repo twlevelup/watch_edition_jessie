@@ -1,0 +1,39 @@
+#discardconfirm-page {
+  font-style: italic;
+  height: 100%;
+}
+
+#discardconfirm-container {
+  height: 100%;
+  width: 100%;
+  padding-top: 5px;
+}
+
+#top {
+  width: 90%;
+  height: 47%;
+}
+
+#bottom {
+  width: 90%;
+  height: 47%;
+}
+
+.highlight {
+  background-color: orange;
+}
+
+#yes-button {
+  height: 80%;
+  padding-left: 40%;
+  background-size: 60%;
+  //text-align: center;
+  padding-top: 10%;
+}
+#no-button {
+  height: 80%;
+  padding-left: 40%;
+  background-size: 50%;
+  //text-align: center;
+  padding-top: 10%;
+}
