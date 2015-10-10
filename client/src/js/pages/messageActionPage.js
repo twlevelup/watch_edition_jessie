@@ -6,7 +6,7 @@ var MessageActionPage = Page.extend({
 
   id: 'messageaction-page',
   selectedPage: 0,
-  selectablePages: ['rsvpSelect', 'discard'],
+  selectablePages: ['rsvpSelect', 'discardconfirm'],
 
   template: require('../../templates/pages/messageActionPage.hbs'),
 

@@ -17,14 +17,8 @@ var DiscardconfirmPage = Page.extend({
   },
 
   deleteMessage: function() {
-    // find a way to pass arrays
-    /*global.App.myMessage = this.messages[this.highlightedMessageIndex]; // we need to copy the messages array
-    global.App.splice(this.highlightedMessageIndex, 1); // deletes the highlighted message
-    this.highlightedMessageIndex = this.highlightedMessageIndex - 1; // highlights the previous message
-    if (this.highlightedMessageIndex <= 0) {
-      this.highlightedMessageIndex = 0;
-    }
-    */global.App.navigate('inbox'); // jumps back to the inbox page
+    global.App.mailbox.deleteCurrentMessage();
+    global.App.navigate('inbox'); // jumps back to the inbox page
   },
 
   goToMessagePage: function() {
