@@ -6,7 +6,7 @@ var RsvpSelectPage = Page.extend({
 
   id: 'rsvpselect-page',
   selectedPage: 0,
-  selectablePages: ['inbox', 'discard'],
+  selectablePages: ['message', 'message'],
 
   template: require('../../templates/pages/rsvpSelectPage.hbs'),
 
@@ -27,7 +27,12 @@ var RsvpSelectPage = Page.extend({
   },
 
   goToSelectedPage: function() {
-    global.App.navigate(this.selectablePages[this.selectedPage]);
+    global.App.navigate('message');
+    if (this.selectedPage === 0) {
+      global.App.mailbox.setRSVP(true);
+    } else {
+      global.App.mailbox.setRSVP(false);
+    }
     this.selectedPage = 0;
   },
 
