@@ -68,13 +68,13 @@ describe('Inbox', function() {
 
     it('should display only four messages and not more', function() {
       spyOn(inboxPage, 'createMessageHTML');
-      inboxPage.messages = [{}, {}, {}, {}, {}, {}];
+      global.App.mailbox = [{}, {}, {}, {}, {}, {}];
       inboxPage.render();
       expect(inboxPage.createMessageHTML.calls.count()).toEqual(4);
     });
 
     it('should say that the inbox is empty when there are no messages in the inbox', function() {
-      inboxPage.messages = [];
+		global.App.mailbox = [];
       inboxPage.render();
       var html = inboxPage.$el.html();
       expect(html).toContainText('Inbox is empty');

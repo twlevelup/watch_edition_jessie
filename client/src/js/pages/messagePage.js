@@ -7,7 +7,7 @@ var MessagePage = Page.extend({
   template: require('../../templates/pages/messagePage.hbs'),
 
   buttonEvents: {
-    right: '',
+    right: 'testTMP',
     left: 'goToInbox',
     top: '',
     bottom: '',
@@ -18,6 +18,15 @@ var MessagePage = Page.extend({
   },
 
   goToInbox: function() {
+    global.App.navigate('inbox');
+  },
+  
+  testTMP: function() {
+	global.App.mailbox.splice(global.App.myMessageIndex, 1);
+	global.App.myMessageIndex = global.App.myMessageIndex - 1; // XXX check with PO
+	if (global.App.myMessageIndex < 0) {
+		global.App.myMessageIndex = 0; // XXX check with PO
+	}
     global.App.navigate('inbox');
   },
 
