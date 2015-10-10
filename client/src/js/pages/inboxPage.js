@@ -8,8 +8,6 @@ var InboxPage = Page.extend({
 
   id: 'inbox-page',
 
-  highlightedMessageIndex: 0,
-
   template: require('../../templates/pages/inboxPage.hbs'),
   templateEmptyInbox: require('../../templates/pages/inboxPageEmpty.hbs'),
 
@@ -23,45 +21,29 @@ var InboxPage = Page.extend({
 
   initialize: function() {
     this.messages = [];
-    this.initializeMessages();
   },
 
   showMessage: function() {
-    global.App.myMessage = this.messages[this.highlightedMessageIndex];
+    global.App.myMessage = this.messages[global.App.myMessageIndex];
     global.App.navigate('message');
   },
 
   scrollUp: function() {
-    this.highlightedMessageIndex -= 1;
-    if (this.highlightedMessageIndex <= 0) {
-      this.highlightedMessageIndex = 0;
+    global.App.myMessageIndex -= 1;
+    if (global.App.myMessageIndex <= 0) {
+      global.App.myMessageIndex = 0;
     }
 
-    $('#watch-face').animate({scrollTop: '-=90px'});
     this.render();
   },
 
   scrollDown: function() {
-    this.highlightedMessageIndex += 1;
-    if (this.highlightedMessageIndex >= this.messages.length) {
-      this.highlightedMessageIndex = this.messages.length - 1;
+    global.App.myMessageIndex += 1;
+    if (global.App.myMessageIndex >= this.messages.length) {
+      global.App.myMessageIndex = this.messages.length - 1;
     }
 
-    $('#watch-face').animate({scrollTop: '+=90px'});
     this.render();
-  },
-
-  initializeMessages: function() {
-    this.messages.push({subject: 'Free Food!', message: 'Come to the USYD quad for free food', date: '15/09/15', rsvp: 'unknown', read: false, type: 'info'});
-    this.messages.push({subject: 'Event Mes 1', message: 'Mock Message Mock Message Mock Message Mock Message ', date: '14/09/15', rsvp: 'unknown', read: false, type: 'event'});
-    this.messages.push({subject: 'Info Mes 1', message: 'Mock Message Mock Message Mock Message Mock Message', date: '14/09/15', rsvp: 'unknown', read: false, type: 'info'});
-    this.messages.push({subject: 'Info Mes 2', message: 'Mock Message Mock Message Mock Message Mock Message', date: '13/09/15', rsvp: 'unknown', read: false, type: 'info'});
-    this.messages.push({subject: 'Event Mes 1', message: 'Mock Message Mock Message Mock Message Mock Message', date: '12/09/15', rsvp: 'unknown', read: true, type: 'info'});
-    this.messages.push({subject: 'Event Mes 2', message: 'Mock Message Mock Message Mock Message Mock Message', date: '11/09/15', rsvp: 'unknown', read: true, type: 'event'});
-    this.messages.push({subject: 'Info Mes 3', message: 'Mock Message Mock Message Mock Message Mock Message', date: '10/09/15', rsvp: 'unknown', read: true, type: 'info'});
-    this.messages.push({subject: 'Info Mes 4', message: 'Mock Message Mock Message Mock Message Mock Message', date: '09/09/15', rsvp: 'unknown', read: true, type: 'info'});
-    this.messages.push({subject: 'Info Mes 5', message: 'Mock Message Mock Message Mock Message Mock Message', date: '08/09/15', rsvp: 'unknown', read: true, type: 'info'});
-    this.messages.push({subject: 'Info Mes 6', message: 'Mock Message Mock Message Mock Message Mock Message', date: '07/09/15', rsvp: 'unknown', read: true, type: 'info'});
   },
 
   goToHomePage: function() {
@@ -69,6 +51,7 @@ var InboxPage = Page.extend({
   },
 
   render: function() {
+    this.messages = global.App.mailbox;
 
     this.$el.html(this.template());
 
@@ -79,9 +62,25 @@ var InboxPage = Page.extend({
 
     var messagesHTML = document.createDocumentFragment();
 
-    for (var i = 0; i < this.messages.length; i += 1) {
+    // Select 4 messages around the current highlighted message
+    var indexStart = global.App.myMessageIndex - 1;
+    if (indexStart < 0) {
+      indexStart = 0;
+    }
+
+    var indexEnd = indexStart + 3;
+    if (indexEnd >= this.messages.length) {
+      indexEnd = this.messages.length - 1;
+      indexStart = this.messages.length - 4;
+    }
+
+    if (indexStart < 0) {
+      indexStart = 0;
+    }
+
+    for (var i = indexStart; i <= indexEnd; i += 1) {
       var highlighted = false;
-      if (i === this.highlightedMessageIndex) {
+      if (i === global.App.myMessageIndex) {
         highlighted = true;
       }
 

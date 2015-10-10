@@ -14,8 +14,28 @@ var App = {
     App.router.navigate(route, true);
   },
 
+  messages: [
+   {subject: 'Free Food!', message: 'Come to the USYD quad for free food', date: '15/09/15', rsvp: 'unknown', read: false, type: 'info'},
+    {subject: 'Event Mes 1', message: 'Mock Message Mock Message Mock Message Mock Message ', date: '14/09/15', rsvp: 'unknown', read: false, type: 'event'},
+    {subject: 'Info Mes 1', message: 'Mock Message Mock Message Mock Message Mock Message', date: '14/09/15', rsvp: 'unknown', read: false, type: 'info'},
+    {subject: 'Info Mes 2', message: 'Mock Message Mock Message Mock Message Mock Message', date: '13/09/15', rsvp: 'unknown', read: false, type: 'info'},
+    {subject: 'Event Mes 1', message: 'Mock Message Mock Message Mock Message Mock Message', date: '12/09/15', rsvp: 'unknown', read: true, type: 'info'},
+    {subject: 'Event Mes 2', message: 'Mock Message Mock Message Mock Message Mock Message', date: '11/09/15', rsvp: 'unknown', read: true, type: 'event'},
+    {subject: 'Info Mes 3', message: 'Mock Message Mock Message Mock Message Mock Message', date: '10/09/15', rsvp: 'unknown', read: true, type: 'info'},
+    {subject: 'Info Mes 4', message: 'Mock Message Mock Message Mock Message Mock Message', date: '09/09/15', rsvp: 'unknown', read: true, type: 'info'},
+    {subject: 'Info Mes 5', message: 'Mock Message Mock Message Mock Message Mock Message', date: '08/09/15', rsvp: 'unknown', read: true, type: 'info'},
+    {subject: 'Info Mes 6', message: 'Mock Message Mock Message Mock Message Mock Message', date: '07/09/15', rsvp: 'unknown', read: true, type: 'info'},
+  ],
+  
   start: function() {
 
+	// var Mailbox = Backbone.collection.extend({});
+	// this.mailbox = new Mailbox();
+	// this.mailbox.push(this.messages);
+	
+	this.myMessageIndex = 0;
+	this.mailbox = this.messages;
+  
     this.router = new Router();
 
     this.watchFace = new WatchFace();
