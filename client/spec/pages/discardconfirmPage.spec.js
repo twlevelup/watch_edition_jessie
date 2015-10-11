@@ -10,19 +10,19 @@ describe('DiscardConfirm', function() {
 
   var discardconfirmPage;
 
-  beforeEach(function () {
+  beforeEach(function() {
     discardconfirmPage = new DiscardconfirmPage();
   });
 
-  describe('button event handlers', function () {
+  describe('button event handlers', function() {
 
-    beforeEach(function () {
+    beforeEach(function() {
       discardconfirmPage.setButtonEvents();
     });
 
-    describe('left', function () {
+    describe('left', function() {
 
-      xit('should return to the messageActionPage',function(){
+      xit('should return to the messageActionPage', function() {
         spyOn(global.App, 'navigate');
         discardconfirmPage.trigger('right');
         expect(global.App.navigate).toHaveBeenCalledWith('');
@@ -30,9 +30,9 @@ describe('DiscardConfirm', function() {
 
     });
 
-    describe('right', function () {
+    describe('right', function() {
 
-      it('should discard the chosen message',function(){
+      it('should discard the chosen message', function() {
         spyOn(global.App, 'navigate');
         discardconfirmPage.setButtonEvents();
         discardconfirmPage.selectedPage = 0;
@@ -40,7 +40,7 @@ describe('DiscardConfirm', function() {
         expect(global.App.navigate).toHaveBeenCalledWith('inbox');
       });
 
-      it('should discard the chosen message',function(){
+      it('should discard the chosen message', function() {
         spyOn(global.App, 'navigate');
         discardconfirmPage.setButtonEvents();
         discardconfirmPage.selectedPage = 0;
@@ -48,8 +48,7 @@ describe('DiscardConfirm', function() {
         expect(global.App.navigate).toHaveBeenCalledWith('inbox');
       });
 
-
-      it('should return to the messagePage',function(){
+      it('should return to the messagePage', function() {
         spyOn(global.App, 'navigate');
         discardconfirmPage.setButtonEvents();
         discardconfirmPage.selectedPage = 1;
@@ -59,19 +58,19 @@ describe('DiscardConfirm', function() {
 
     });
 
-    describe('top', function () {
+    describe('top', function() {
 
       xit('should have tests');
 
     });
 
-    describe('bottom', function () {
+    describe('bottom', function() {
 
       xit('should have tests');
 
     });
 
-    describe('face', function () {
+    describe('face', function() {
 
       xit('should have tests');
 
@@ -79,9 +78,9 @@ describe('DiscardConfirm', function() {
 
   });
 
-  describe('rendering', function () {
+  describe('rendering', function() {
 
-    it('should produce the correct HTML', function () {
+    it('should produce the correct HTML', function() {
       discardconfirmPage.render();
       var html = discardconfirmPage.$el.html();
       expect(html).toContainText('DiscardConfirm');

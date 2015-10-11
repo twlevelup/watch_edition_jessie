@@ -26,10 +26,10 @@ var DiscardconfirmPage = Page.extend({
   },
 
   goToSelectedPage: function() {
-    if(this.selectedPage === 0){
+    if (this.selectedPage === 0) {
       this.deleteMessage();
     }
-    else if(this.selectedPage === 1){
+    else if (this.selectedPage === 1) {
       this.goToMessagePage();
     }
   },
@@ -49,8 +49,6 @@ var DiscardconfirmPage = Page.extend({
   goToRSVPPage: function() {
     global.App.navigate('rsvp');
   },
-
-
 
   render: function() {
     this.$el.html(this.template());

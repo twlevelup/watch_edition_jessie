@@ -33,6 +33,7 @@ var RsvpSelectPage = Page.extend({
     } else {
       global.App.mailbox.setRSVP(false);
     }
+
     this.selectedPage = 0;
   },
 

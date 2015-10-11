@@ -45,10 +45,11 @@ var Mailbox = Backbone.Collection.extend({
   },
 
   setRSVP: function(rsvp) {
-	var txt = 'Attending!';
-	if (!rsvp) {
-		txt = 'Not attending :(';
-	}
+    var txt = 'Attending!';
+    if (!rsvp) {
+      txt = 'Not attending :(';
+    }
+
     this.getSelectedMessage().set('rsvp', txt);
   },
 

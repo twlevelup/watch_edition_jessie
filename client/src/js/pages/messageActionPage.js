@@ -45,7 +45,7 @@ var MessageActionPage = Page.extend({
 
   goToMessage: function() {
     global.App.navigate('message');
-  },
+  }
 
   /*goToRsvpSelect: function() {
     global.App.navigate('rsvpSelect');
